@@ -1,6 +1,6 @@
 {
   "name": "ping-pong-beta",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Beta Testing for pingpongbot.",
   "main": "index.js",
   "scripts": {
