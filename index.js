@@ -47,6 +47,6 @@ for (const files of folders) {
   }
 }
 
-/**Giveaway command Stuff! */
+/**Giveaway commands stuff! */
 
 client.login(process.env.BOT_TOKEN);
