@@ -21,7 +21,7 @@
   "dependencies": {
     "cblapi.js": "^1.0.7",
     "discord-giveaways": "^4.5.1",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.0.0-dev.t1627992462.35fa3b3",
     "dotenv": "^9.0.2",
     "mongoose": "^5.12.8"
   },

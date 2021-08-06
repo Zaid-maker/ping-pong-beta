@@ -1,31 +1,25 @@
-/**Discord Stuff */
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const fs = require("fs");
+const { Client, Intents } = require('discord.js');
 
-/**Dotenv */
-require("dotenv").config();
-
-/**Collection */
-client.commands = new Discord.Collection();
-client.events = new Discord.Collection();
-
-['command_handler', 'event_handler'].forEach(handler => {
-  require(`./handlers/${handler}`)(client, Discord)
+const client = new Client({
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS]
 });
 
-/**Mongoose */
-const mongoose = require("mongoose");
+const config = require('./config.json');
 
-async () => {
-  await mongoose.connect(`${process.env.MONGO_DB_URL}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  });
-};
+client.once('ready', () => {
+  console.log(`Logged in as ${client.user.tag}, my id is ${client.user.id}`);
+});
 
-/**Giveaway commands stuff! */
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
 
-client.login(process.env.BOT_TOKEN);
+	const { commandName: command } = interaction;
+
+	if (command === 'ping') {
+		await interaction.reply('Pong!');
+	} else if (command === 'beep') {
+		await interaction.reply('Boop!');
+	}
+});
+
+client.login(config.bot_token);
