@@ -10,9 +10,13 @@ const intents = new Discord.Intents(32767);
 
 const fs = require('fs');
 
+const { REST } = require('@discordjs/rest');
+
+const { Routes } = require('discord-api-types/v9');
+
 class Client extends Discord.Client {
 	constructor() {
-		super({ intents });
+		super({ intents, allowedMentions: { repliedUser: false } });
 
 		/**
 		 * @type {Discord.Collection<string, Command>}
@@ -39,7 +43,25 @@ class Client extends Discord.Client {
 			const event = require(`../Events/${file}`);
 			console.log(`Event ${event.event} Loaded`);
 			this.on(event.event, event.run.bind(null, this));
-		})
+		});
+
+		const rest = new REST({ version: 'v9' }).setToken(bot_token);
+
+		(async () => {
+			try {
+				console.log(`Successfully refreshed applications (/) commands`);
+
+				await rest.put(
+					Routes.applicationGuildCommands(CLIENT_ID),
+					{ body: this.commands },
+				);
+
+				console.log('Reloaded applications slash commands.');
+			} catch (error) {
+				console.log(error);
+			}
+		});
+		
 		this.login(bot_token);
 	}
 }
