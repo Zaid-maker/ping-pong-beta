@@ -4,8 +4,9 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = new Command({
 	name: "hello",
-	description: "Hello!",
-
+	description: "Replies with Hello There!",
+	type: 'BOTH',
+	slashCommandOptions: [],
 	async run(message, args, client) {
 		const helloembed = new MessageEmbed()
 		.setTitle('Hello There!')

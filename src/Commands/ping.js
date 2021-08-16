@@ -5,10 +5,11 @@ const { MessageEmbed } = require('discord.js');
 module.exports = new Command({
 	name: "ping",
 	description: "Shows the ping of the bot!",
+	type: "BOTH",
+	slashCommandOptions: [],
 	async run(message, args, client) {
 		const pingembed = new MessageEmbed()
 		.setTitle('PONG!')
-		.setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
 		.setColor('YELLOW')
 		.setThumbnail(message.guild.iconURL())
 		.addField('Client Ping', `${client.ws.ping}ms`)

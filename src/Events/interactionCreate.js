@@ -1,13 +1,19 @@
 const Event = require("../Structures/Event");
 
-module.exports = new Event("interactionCreate", async (interaction) => {
-  console.log(
-    `${interaction.user.tag} in #${interaction.channel.name} triggered an interaction.`
-  );
+module.exports = new Event("interactionCreate", async (client, interaction) => {
+  if (interaction.user.bot || !interaction.isCommand() || !interaction.guild)
+    return;
 
-  if (!interaction.isCommand()) return;
+  const args = [
+    interaction.commandName,
+    ...client.commands
+      .find((cmd) => cmd.name.toLowerCase() == interaction.commandName)
+      .slashCommandOptions.map(v => `${interaction.options.get(v.name).value}`),
+  ];
 
-  if (interaction.commandName === "ping") {
-    await interaction.reply("Pong!");
-  }
+  const command = client.commands.find(cmd => cmd.name.toLowerCase() == interaction.commandName);
+
+  if (!command) return interaction.reply("This is not a valid interaction command.");
+
+  command.run(interaction, args, client);
 });

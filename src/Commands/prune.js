@@ -3,6 +3,13 @@ const Command = require('../Structures/Command');
 module.exports = new Command({
     name: 'prune',
     description: 'Let you delete message from 1 to 100.',
+    type: 'BOTH',
+    slashCommandOptions: [{
+        name: "amount",
+        description: 'The amount of message to be clear',
+        type: 'INTEGER',
+        required: true
+    }],
     async run(message, args, client) {
         const amount = args[1];
 
@@ -14,9 +21,9 @@ module.exports = new Command({
 
         message.channel.bulkDelete(parsedAmount);
 
-        const msg = await message.channel.send(`Cleared ${parsedAmount} messages.`);
+        const msg = await message.reply(`Cleared ${parsedAmount} messages.`);
 
-        setInterval(() => {
+        if (msg) setTimeout(() => {
             msg.delete(),
             5000
         })
