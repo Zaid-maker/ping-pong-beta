@@ -12,6 +12,6 @@ module.exports = new Command({
         .setTitle('Statistics of the bot.')
         .addField('Servers', `${client.guilds.cache.size}`)
         .addField('Users', `${client.users.cache.size}`)
-        message.channel.send({ embeds: [embed] })
+        message.reply({ embeds: [embed] })
     }
 })

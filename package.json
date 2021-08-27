@@ -1,6 +1,6 @@
 {
   "name": "ping-pong-beta",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Beta Testing for pingpongbot.",
   "main": "src/index.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "cblapi.js": "^1.0.7",
     "discord-giveaways": "^4.5.1",
     "discord.js": "^13.1.0",
+    "djs-buttons-pagination": "^1.6.2",
     "dotenv": "^9.0.2",
     "mongoose": "^5.12.8"
   },
