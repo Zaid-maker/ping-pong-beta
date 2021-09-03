@@ -13,29 +13,36 @@ module.exports = new Command({
         const helpEmbed = new MessageEmbed()
         .setColor('YELLOW')
         .setTitle('👑 Owner Commands')
-        .setDescription(`*\`\`eval, exec\`\`*`)
+        .setDescription(`*\`\`eval\nexec\`\`*`)
         .setTimestamp()
 
         //Section 2
         const helpEmbed1 = new MessageEmbed()
         .setColor('YELLOW')
         .setTitle('🎮 Game Info Commands')
-        .setDescription(`*\`\`mc [server IP]/nfortnite [username]\`\`*`)
+        .setDescription(`*\`\`mc [server IP]\nfortnite [username]\`\`*`)
         .setTimestamp()
         .setFooter('*Usage: >mc play.hypixel.net*')
 
         //Section 3
         const helpEmbed2 = new MessageEmbed()
-        .setColor('BLURPLE')
-        .setTitle(' Slash Commands')
+        .setColor('YELLOW')
+        .setTitle('Slash Commands')
         .setDescription(`Slash commands can be perform by typing **/** in your chat.`)
         .setTimestamp()
 
         // Section 4
         const helpEmbed3 = new MessageEmbed()
         .setColor('YELLOW')
-        .setTitle('Guild Configuration')
-        .setDescription(`*\`\`setprefix [new-prefix for your guild.]\`\`*`)
+        .setTitle('Guild Configuration Commands')
+        .setDescription(`*\`\`setprefix [new-prefix for your guild.]\nsetwelcome [channel id]\nsetleave [channelid]\`\`*`)
+        .setTimestamp()
+
+        // Section 5 
+        const helpEmbed4 = new MessageEmbed()
+        .setColor('YELLOW')
+        .setTitle('Moderation Commands')
+        .setDescription(`*\`\`kick [user] [reason]\nban [user] [reason]\nmute [user] [reason]\nunmute [user]\`\`*`)
         .setTimestamp()
 
         // Create an array of embeds
@@ -43,7 +50,8 @@ module.exports = new Command({
             helpEmbed,
             helpEmbed1,
             helpEmbed2,
-            helpEmbed3
+            helpEmbed3,
+            helpEmbed4
         ];
 
         // Emojis for buttons.
