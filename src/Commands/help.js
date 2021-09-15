@@ -44,6 +44,7 @@ module.exports = new Command({
         .setTitle('Moderation Commands')
         .setDescription(`*\`\`kick [user] [reason]\nban [user] [reason]\nmute [user] [reason]\nunmute [user]\`\`*`)
         .setTimestamp()
+        .setFooter('Work is in progress!')
 
         // Create an array of embeds
         const pages = [

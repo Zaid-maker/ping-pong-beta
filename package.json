@@ -19,13 +19,11 @@
   },
   "homepage": "https://github.com/Zaid-maker/ping-pong-beta#readme",
   "dependencies": {
-    "@discordjs/builders": "^0.4.0",
-    "@discordjs/rest": "*",
     "cblapi.js": "^1.0.7",
-    "discord-giveaways": "^4.5.1",
     "discord.js": "^13.1.0",
     "djs-buttons-pagination": "^1.6.2",
     "dotenv": "^9.0.2",
+    "moment": "^2.29.1",
     "mongoose": "^5.12.8"
   },
   "devDependencies": {
