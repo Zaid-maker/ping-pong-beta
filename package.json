@@ -23,8 +23,8 @@
     "discord.js": "^13.1.0",
     "djs-buttons-pagination": "^1.6.2",
     "dotenv": "^9.0.2",
-    "moment": "^2.29.1",
-    "mongoose": "^5.12.8"
+    "fero-ms": "^2.0.7",
+    "moment": "^2.29.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
