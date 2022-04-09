@@ -24,7 +24,7 @@
     "djs-buttons-pagination": "^1.6.2",
     "dotenv": "^9.0.2",
     "fero-ms": "^2.0.7",
-    "moment": "^2.29.1"
+    "moment": "^2.29.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
