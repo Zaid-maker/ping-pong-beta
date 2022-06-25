@@ -20,7 +20,7 @@
   "homepage": "https://github.com/Zaid-maker/ping-pong-beta#readme",
   "dependencies": {
     "cblapi.js": "^1.1.2",
-    "discord.js": "^13.3.1",
+    "discord.js": "^13.8.1",
     "djs-buttons-pagination": "^1.6.2",
     "dotenv": "^9.0.2",
     "fero-ms": "^2.0.7",
